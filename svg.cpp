@@ -11,12 +11,12 @@ void svg_begin(double width, double height) {
 
         void svg_text(double left, double baseline, string text) {
 
-            cout << "<text x='" << left << "' y='" << baseline << "'>" << text << "</text>";
+            cout << "<text x='" << left << "' y='" << baseline << "'>" << text << "</text>" << endl;
 
         }
-        void svg_rect(double x, double y, double wid, double heig, string stroke = "black", string fill = "black"){
+        void svg_rect(double x, double y, double wid, double heig, string fill, string stroke = "black"){
 
-            cout << "<rect x='" << x << "' y='" << y << "' width='" << wid << "' height='" << heig << "' stroke='" << stroke << "' fill='" << fill << "'/>";
+            cout << "<rect x='" << x << "' y='" << y << "' width='" << wid << "' height='" << heig << "' stroke='" << stroke << "' fill='" << fill << "'/>" << endl;
 
         };
 
@@ -24,7 +24,11 @@ void svg_begin(double width, double height) {
                             cout << "</svg>\n";
                         }
 
-                void show_histogram_svg(const vector<size_t>& bins) {
+
+
+
+
+                void show_histogram_svg(const vector<size_t>& bins, const vector<string>& colors, size_t bin_count) {
                     const auto IMAGE_WIDTH = 400;
                     const auto IMAGE_HEIGHT = 300;
                     const auto TEXT_LEFT = 20;
@@ -35,13 +39,51 @@ void svg_begin(double width, double height) {
 
                     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
 
-                            double top = 0;
-                            for (size_t bin : bins) {
-                                const double bin_width = BLOCK_WIDTH * bin;
-                                svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
-                                svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT);
-                                top += BIN_HEIGHT;
+
+                            size_t max_count = 0;
+                            for (size_t count : bins)
+                            {
+                                if (count > max_count)
+                                {
+                                    max_count = count;
+                                }
                             }
 
-                    svg_end();
+                    const bool scaling_needed = (max_count * BLOCK_WIDTH) > (IMAGE_WIDTH - TEXT_WIDTH);
+                    const double scaling_factor = (double)((IMAGE_WIDTH - TEXT_WIDTH)) / (double)((max_count * BLOCK_WIDTH));
+
+                                if (scaling_needed)
+                                {
+
+                                       double top = 0;
+
+                                                        for (size_t i=0; i<bin_count; i++) {
+                                                            const double bin_width = double(BLOCK_WIDTH * bins[i] * scaling_factor);
+                                                            svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bins[i]));
+
+                                                            svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, colors[i]);
+
+                                                            top += BIN_HEIGHT;
+                                                        }
+
+                                }
+
+                                    else {
+
+                                        double top = 0;
+
+                                                        for (size_t i=0; i<bin_count; i++) {
+                                                            const double bin_width = BLOCK_WIDTH * bins[i];
+                                                            svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bins[i]));
+
+                                                            svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, colors[i]);
+
+                                                            top += BIN_HEIGHT;
+                                                        }
+
+                                    }
+
+
+                                                svg_end();
+
                 }
