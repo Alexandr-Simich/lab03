@@ -14,7 +14,7 @@ void svg_begin(double width, double height) {
             cout << "<text x='" << left << "' y='" << baseline << "'>" << text << "</text>" << endl;
 
         }
-        void svg_rect(double x, double y, double wid, double heig, string fill, string stroke = "black"){
+        void svg_rect(double x, double y, double wid, double heig, string stroke, string fill = "white"){
 
             cout << "<rect x='" << x << "' y='" << y << "' width='" << wid << "' height='" << heig << "' stroke='" << stroke << "' fill='" << fill << "'/>" << endl;
 

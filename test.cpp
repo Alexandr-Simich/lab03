@@ -41,6 +41,7 @@ void test_empty() {
     assert(max == 0);
 }
 
+
 int main() {
 
     test_positive();
