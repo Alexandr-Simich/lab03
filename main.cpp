@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-
+// 123
     size_t number_count;
     cerr << "Enter number count: ";
     cin >> number_count;
