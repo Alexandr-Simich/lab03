@@ -7,13 +7,13 @@ using namespace std;
 
 int main()
 {
-    Input data = read_input(cin, true);
+    Input input = read_input(cin, true);
 
     double min;
     double max;
-    find_minmax(data.numbers,min,max);
+    find_minmax(input.numbers,min,max);
 
-    auto bins = make_histogram(data.numbers, data.bin_count, min, max);
+    auto bins = make_histogram(input.numbers, input.bin_count, min, max);
 
     show_histogram_svg(bins);
 

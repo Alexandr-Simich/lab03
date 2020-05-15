@@ -35,7 +35,7 @@ vector<double> input_numbers(istream& in, size_t count)
 }
 
 Input read_input(istream& in, bool prompt) {
-    Input data;
+    Input input;
     if(prompt){
         cerr << "Enter number count: ";
     }
@@ -44,13 +44,13 @@ Input read_input(istream& in, bool prompt) {
     if(prompt){
         cerr << "Enter numbers: ";
     }
-    data.numbers = input_numbers(in, number_count);
+    input.numbers = input_numbers(in, number_count);
     if(prompt){
         cerr << "Enter column count: ";
     }
-    cin >> data.bin_count;
+    cin >> input.bin_count;
 
-    return data;
+    return input;
 }
 
 
