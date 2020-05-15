@@ -34,12 +34,31 @@ vector<double> input_numbers(istream& in, size_t count)
     return result;
 }
 
-vector <size_t> make_histogram(const vector<double>& numbers, size_t bin_count, double min, double max)
+Input read_input(istream& in) {
+    Input data;
+
+    cerr << "Enter number count: ";
+    size_t number_count;
+    cin >> number_count;
+
+    cerr << "Enter numbers: ";
+    data.numbers = input_numbers(in, number_count);
+
+    cerr << "Enter column count: ";
+    cin >> data.bin_count;
+
+    return data;
+}
+
+
+
+vector <size_t> make_histogram(const vector<double>& numbers, size_t& bin_count, double min, double max)
 {
     vector<size_t> bins(bin_count);
     for (double number : numbers)
     {
         size_t bin = (size_t)((number - min) / (max - min) * bin_count);
+
         if (bin == bin_count)
         {
             bin--;
