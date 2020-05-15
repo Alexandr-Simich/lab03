@@ -6,19 +6,26 @@ using namespace std;
 
 
 
-int main()
+int main(int argc, char* argv[])
 {
-    curl_global_init(CURL_GLOBAL_ALL);
+    if (argc > 1)
+    {
+        cout << "argñ = " << argc;
+        cout << "argv[0] = "<< argv[0];
+        return 0;
+    }
+    else
+    {
+        curl_global_init(CURL_GLOBAL_ALL);
+        Input input = read_input(cin, true);
+        double min;
+        double max;
+        find_minmax(input.numbers,min,max);
 
-    Input input = read_input(cin, true);
+        auto bins = make_histogram(input.numbers, input.bin_count, min, max);
 
-    double min;
-    double max;
-    find_minmax(input.numbers,min,max);
+        show_histogram_svg(bins);
 
-    auto bins = make_histogram(input.numbers, input.bin_count, min, max);
-
-    show_histogram_svg(bins);
-
-    return 0;
+        return 0;
+    }
 }
