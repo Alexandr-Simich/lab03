@@ -15,7 +15,7 @@ int main()
 
     auto bins = make_histogram(data.numbers, data.bin_count, min, max);
 
-    show_histogram_svg(bins, data.bin_count);
+    show_histogram_svg(bins);
 
     return 0;
 }

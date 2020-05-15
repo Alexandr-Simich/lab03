@@ -28,7 +28,7 @@ void svg_begin(double width, double height) {
 
 
 
-                void show_histogram_svg(const vector<size_t>& bins, size_t bin_count) {
+                void show_histogram_svg(const vector<size_t>& bins) {
                     const auto IMAGE_WIDTH = 400;
                     const auto IMAGE_HEIGHT = 300;
                     const auto TEXT_LEFT = 20;
@@ -57,9 +57,9 @@ void svg_begin(double width, double height) {
 
                                        double top = 0;
 
-                                                        for (size_t i=0; i<bin_count; i++) {
-                                                            const double bin_width = double(BLOCK_WIDTH * bins[i] * scaling_factor);
-                                                            svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bins[i]));
+                                                        for (size_t b1 : bins) {
+                                                            const double bin_width = double(BLOCK_WIDTH * b1 * scaling_factor);
+                                                            svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(b1));
 
                                                             svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT);
 
@@ -72,9 +72,9 @@ void svg_begin(double width, double height) {
 
                                         double top = 0;
 
-                                                        for (size_t i=0; i<bin_count; i++) {
-                                                            const double bin_width = BLOCK_WIDTH * bins[i];
-                                                            svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bins[i]));
+                                                        for (size_t b2 : bins) {
+                                                            const double bin_width = BLOCK_WIDTH * b2;
+                                                            svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(b2));
 
                                                             svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT);
 

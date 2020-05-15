@@ -3,7 +3,7 @@
 	"histogram.h"
 	"svg.h"
 
-1589550511 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.h
+1589569944 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.h
 	<iostream>
 	<vector>
 
@@ -11,7 +11,7 @@
 	<iostream>
 	<vector>
 
-1589550412 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.cpp
+1589560682 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.cpp
 	"histogram.h"
 
 1587409411 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\test.cpp
