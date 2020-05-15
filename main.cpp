@@ -4,13 +4,13 @@ using namespace std;
 
 int main()
 {
-// 123
+
     size_t number_count;
     cerr << "Enter number count: ";
     cin >> number_count;
 
     cerr << "Enter numbers: ";
-    const auto numbers = input_numbers(number_count);
+    const auto numbers = input_numbers(cin, number_count);
 
     size_t bin_count;
     cerr << "Enter column count: ";
@@ -24,9 +24,7 @@ int main()
 
     cerr << "Enter column colors: ";
 
-    const auto colors = input_colors(bin_count);
-
-    show_histogram_svg(bins, colors, bin_count);
+    show_histogram_svg(bins, bin_count);
 
     return 0;
 }
