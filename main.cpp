@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    Input data = read_input(cin);
+    Input data = read_input(cin, true);
 
     double min;
     double max;
