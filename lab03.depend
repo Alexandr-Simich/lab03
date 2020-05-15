@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1589558170 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\main.cpp
+1589572126 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\main.cpp
 	"histogram.h"
 	"svg.h"
+	<curl/curl.h>
 
-1589569944 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.h
+1589570373 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.h
 	<iostream>
 	<vector>
 
@@ -11,7 +12,7 @@
 	<iostream>
 	<vector>
 
-1589560682 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.cpp
+1589570596 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.cpp
 	"histogram.h"
 
 1587409411 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\test.cpp
@@ -20,4 +21,43 @@
 
 1589569944 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\svg.cpp
 	"svg.h"
+
+1587991348 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\curl\include\curl\curl.h
+	"curlver.h"
+	"system.h"
+	<stdio.h>
+	<limits.h>
+	<osreldate.h>
+	<sys/types.h>
+	<time.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/select.h>
+	<sys/socket.h>
+	<sys/time.h>
+	<support/SupportDefs.h>
+	"easy.h"
+	"multi.h"
+	"urlapi.h"
+	"typecheck-gcc.h"
+
+1588129392 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\curl\include\curl\curlver.h
+
+1587548874 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\curl\include\curl\system.h
+	<winsock2.h>
+	<windows.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/poll.h>
+
+1587548874 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\curl\include\curl\easy.h
+
+1587548874 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\curl\include\curl\multi.h
+	"curl.h"
+
+1587548874 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\curl\include\curl\urlapi.h
+	"curl.h"
+
+1587548874 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\curl\include\curl\typecheck-gcc.h
 
