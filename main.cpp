@@ -1,11 +1,12 @@
 #include "histogram.h"
 #include "svg.h"
+#include <windows.h>
 #include <curl/curl.h>
 #include <sstream>
 #include <string>
 using namespace std;
 
-
+DWORD WINAPI GetVersion(void);
 
 Input read_input(istream& in, bool prompt)
 {
@@ -64,7 +65,10 @@ Input download(const string& address)
 
 int main(int argc, char* argv[])
 {
-    Input input;
+    printf("Version is  %x\n", GetVersion());
+    printf("Version is  %u\n", GetVersion());
+
+  /*  Input input;
     if (argc > 1)
     {
         input = download(argv[1]);
@@ -78,7 +82,7 @@ int main(int argc, char* argv[])
     const auto bins = make_histogram(input, min, max);
     show_histogram_svg(bins);
 
-    return 0;
+    return 0; */
 }
 
 
