@@ -2,23 +2,24 @@
 
 void find_minmax(const Input& data, double& min, double& max)
 {
-            if (data.numbers.size()!= 0) {
+    if (data.numbers.size()!= 0)
+    {
         min = data.numbers[0];
         max = data.numbers[0];
         for (double number : data.numbers)
         {
 
-                if (number < min)
-        {
-            min = number;
-        }
+            if (number < min)
+            {
+                min = number;
+            }
 
-        if (number > max)
-        {
-            max = number;
-        }
+            if (number > max)
+            {
+                max = number;
+            }
 
-         }
+        }
 
     }
 
@@ -43,7 +44,7 @@ vector <size_t> make_histogram(const Input& data, double& min, double& max)
     vector<size_t> bins(data.bin_count);
     for (auto number : data.numbers)
     {
-   size_t bin = (size_t)((number - min) / (max - min) * data.bin_count);
+        size_t bin = (size_t)((number - min) / (max - min) * data.bin_count);
 
 
         if (bin == data.bin_count)
