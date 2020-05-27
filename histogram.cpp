@@ -34,36 +34,19 @@ vector<double> input_numbers(istream& in, size_t count)
     return result;
 }
 
-Input read_input(istream& in, bool prompt) {
-    Input input;
-    if(prompt){
-        cerr << "Enter number count: ";
-    }
-    size_t number_count;
-    cin >> number_count;
-    if(prompt){
-        cerr << "Enter numbers: ";
-    }
-    input.numbers = input_numbers(in, number_count);
-    if(prompt){
-        cerr << "Enter column count: ";
-    }
-    cin >> input.bin_count;
-
-    return input;
-}
 
 
 
-vector <size_t> make_histogram(const vector<double>& numbers,
-            size_t& bin_count, double min, double max)
+
+vector <size_t> make_histogram(const Input& data)
 {
-    vector<size_t> bins(bin_count);
-    for (double number : numbers)
+    vector<size_t> bins(data.bin_count);
+    for (auto number : data.numbers)
     {
-        size_t bin = (size_t)((number - min) / (max - min) * bin_count);
+ //       size_t bin = (size_t)((number - min) / (max - min) * data.bin_count);
+        size_t bin = (size_t)(number / data.bin_count);
 
-        if (bin == bin_count)
+        if (bin == data.bin_count)
         {
             bin--;
         }

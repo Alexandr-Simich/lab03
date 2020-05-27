@@ -1,43 +1,82 @@
 #include "histogram.h"
 #include "svg.h"
 #include <curl/curl.h>
+#include <sstream>
+#include <string>
 using namespace std;
 
 
 
-
-int main(int argc, char* argv[])
-{
-    if (argc > 1)
+Input read_input(istream& in,bool prompt) {
+    Input data;
+    size_t number_count;
+    if(prompt)
     {
-                    CURL *curl = curl_easy_init();
-            if(curl)
-            {
-                CURLcode res;
-                curl_easy_setopt(curl, CURLOPT_URL, argv[1]);
-                res = curl_easy_perform(curl);
-                if (res) {
-                cerr << curl_easy_strerror(res);
-                exit(1);
-                }
-                curl_easy_cleanup(curl);
-            }
-        return 0;
+    cerr << "Enter number count: ";
+    in >> number_count;
+    cerr << "Enter numbers: ";
+    data.numbers = input_numbers(in, number_count);
+    cerr << "Enter column count: ";
+    in >> data.bin_count;
+    }
+    else
+    {
+        in >> number_count;
+        data.numbers = input_numbers(in, number_count);
+        in >> data.bin_count;
     }
 
-        curl_global_init(CURL_GLOBAL_ALL);
-        Input input = read_input(cin, true);
-        double min;
-        double max;
-        find_minmax(input.numbers,min,max);
-
-        auto bins = make_histogram(input.numbers, input.bin_count, min, max);
-
-        show_histogram_svg(bins);
-
-
-
-
-        return 0;
+    return data;
 }
 
+Input download(const string& address) {
+    stringstream buffer;
+
+    curl_global_init(CURL_GLOBAL_ALL);
+
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        CURLcode res;
+        curl_easy_setopt(curl, CURLOPT_URL, address.c_str());
+        res = curl_easy_perform(curl);
+        if (res)
+        {
+            cout << curl_easy_strerror(res) << endl;
+            exit(1);
+        }
+    }
+   curl_easy_cleanup(curl);
+   return read_input(buffer, false);
+}
+
+int main(int argc, char* argv[]) {
+    Input input;
+   if (argc > 1)
+    {
+        input = download(argv[1]);
+    }
+    else
+    {
+        input = read_input(cin, true);
+    }
+    const auto bins = make_histogram(input);
+    show_histogram_svg(bins);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//const vector<double>& numbers,
+//  size_t& bin_count, double min, double max

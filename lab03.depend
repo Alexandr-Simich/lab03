@@ -1,25 +1,27 @@
 # depslib dependency file v1.0
-1589572126 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\main.cpp
+1590604799 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\main.cpp
 	"histogram.h"
 	"svg.h"
 	<curl/curl.h>
+	<sstream>
+	<string>
 
-1589570373 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.h
+1590604575 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.h
 	<iostream>
 	<vector>
 
-1589569944 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\svg.h
+1590603686 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\svg.h
 	<iostream>
 	<vector>
 
-1589570596 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.cpp
+1590604475 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.cpp
 	"histogram.h"
 
 1587409411 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\test.cpp
 	"histogram.h"
 	<cassert>
 
-1589569944 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\svg.cpp
+1590603686 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\svg.cpp
 	"svg.h"
 
 1587991348 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\curl\include\curl\curl.h
