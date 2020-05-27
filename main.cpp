@@ -59,7 +59,9 @@ int main(int argc, char* argv[]) {
     {
         input = read_input(cin, true);
     }
-    const auto bins = make_histogram(input);
+    double min = 0, max = 0;
+    find_minmax(input, min, max);
+    const auto bins = make_histogram(input, min, max);
     show_histogram_svg(bins);
 
     return 0;

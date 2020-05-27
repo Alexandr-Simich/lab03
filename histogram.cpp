@@ -1,11 +1,11 @@
 #include "histogram.h"
 
-void find_minmax(const vector<double>& numbers, double& min, double& max)
+void find_minmax(const Input& data, double& min, double& max)
 {
-            if (numbers.size()!= 0) {
-        min = numbers[0];
-        max = numbers[0];
-        for (double number : numbers)
+            if (data.numbers.size()!= 0) {
+        min = data.numbers[0];
+        max = data.numbers[0];
+        for (double number : data.numbers)
         {
 
                 if (number < min)
@@ -38,13 +38,13 @@ vector<double> input_numbers(istream& in, size_t count)
 
 
 
-vector <size_t> make_histogram(const Input& data)
+vector <size_t> make_histogram(const Input& data, double& min, double& max)
 {
     vector<size_t> bins(data.bin_count);
     for (auto number : data.numbers)
     {
- //       size_t bin = (size_t)((number - min) / (max - min) * data.bin_count);
-        size_t bin = (size_t)(number / data.bin_count);
+   size_t bin = (size_t)((number - min) / (max - min) * data.bin_count);
+
 
         if (bin == data.bin_count)
         {

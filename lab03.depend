@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1590604799 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\main.cpp
+1590607048 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\main.cpp
 	"histogram.h"
 	"svg.h"
 	<curl/curl.h>
 	<sstream>
 	<string>
 
-1590604575 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.h
+1590607048 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.h
 	<iostream>
 	<vector>
 
@@ -14,7 +14,7 @@
 	<iostream>
 	<vector>
 
-1590604475 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.cpp
+1590607057 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.cpp
 	"histogram.h"
 
 1587409411 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\test.cpp
