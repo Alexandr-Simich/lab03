@@ -1,12 +1,12 @@
 #include "histogram.h"
 
-void find_minmax(const Input& data, double& min, double& max)
+void find_minmax(vector <double> numbers, double& min, double& max)
 {
-    if (data.numbers.size()!= 0)
+    if (numbers.size()!= 0)
     {
-        min = data.numbers[0];
-        max = data.numbers[0];
-        for (double number : data.numbers)
+        min = numbers[0];
+        max = numbers[0];
+        for (double number : numbers)
         {
 
             if (number < min)
@@ -25,12 +25,12 @@ void find_minmax(const Input& data, double& min, double& max)
 
 }
 
-vector<double> input_numbers(istream& in, size_t count)
+vector<double> input_numbers(size_t count)
 {
     vector<double> result(count);
     for (size_t i = 0; i < count; i++)
     {
-        in >> result[i];
+        cin >> result[i];
     }
     return result;
 }
@@ -39,24 +39,24 @@ vector<double> input_numbers(istream& in, size_t count)
 
 
 
-vector <size_t> make_histogram(const Input& data, double& min, double& max)
+vector <size_t>
+make_histogram(vector <double> numbers,size_t bin_count,double min,double max)
 {
-    vector<size_t> bins(data.bin_count);
-    for (auto number : data.numbers)
+    vector<size_t> bins(bin_count);
+    for (double number : numbers)
     {
-        size_t bin = (size_t)((number - min) / (max - min) * data.bin_count);
-
-
-        if (bin == data.bin_count)
+        size_t bin = (size_t)((number - min) / (max - min) * bin_count);
+        if (bin == bin_count)
         {
             bin--;
         }
         bins[bin]++;
     }
-    return (bins);
+    return(bins);
 }
 
-void show_histogram_text(vector <size_t> bins)
+void
+show_histogram_text(vector<size_t>bins)
 {
     const size_t SCREEN_WIDTH = 80;
     const size_t MAX_ASTERISK = SCREEN_WIDTH - 4 - 1;
@@ -75,11 +75,11 @@ void show_histogram_text(vector <size_t> bins)
     {
         if (bin < 100)
         {
-            cout << " ";
+            cout << ' ';
         }
         if (bin < 10)
         {
-            cout << " ";
+            cout << ' ';
         }
         cout << bin << "|";
 
@@ -92,9 +92,9 @@ void show_histogram_text(vector <size_t> bins)
 
         for (size_t i = 0; i < height; i++)
         {
-            cout << "*";
+            cout << '*';
         }
-        cout << "\n";
+        cout << '\n';
     }
 }
 
