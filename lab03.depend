@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1590609438 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\main.cpp
+1590781703 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\main.cpp
+	<iostream>
+	<vector>
 	"histogram.h"
 	"svg.h"
-	<curl/curl.h>
-	<sstream>
-	<string>
+	"system_info.h"
+	<windows.h>
 
-1590607159 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.h
+1590779562 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.h
 	<iostream>
 	<vector>
 
@@ -14,15 +15,16 @@
 	<iostream>
 	<vector>
 
-1590608992 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.cpp
+1590779579 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\histogram.cpp
 	"histogram.h"
 
 1587409411 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\test.cpp
 	"histogram.h"
 	<cassert>
 
-1590609438 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\svg.cpp
+1590933261 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\svg.cpp
 	"svg.h"
+	"system_info.h"
 
 1587991348 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\curl\include\curl\curl.h
 	"curlver.h"
@@ -62,4 +64,16 @@
 	"curl.h"
 
 1587548874 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\curl\include\curl\typecheck-gcc.h
+
+1590777984 d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\system_info.h
+	<sstream>
+	<iostream>
+	<string>
+
+1590777984 source:d:\alexander\Учёба МЭИ\2 semestr\Прога\lab03\system_info.cpp
+	<windows.h>
+	<sstream>
+	<iostream>
+	<string>
+	"system_info.h"
 
